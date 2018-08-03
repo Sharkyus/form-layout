@@ -5,6 +5,23 @@
     <title>Form layout</title>
 </head>
 <body>
-    Form layout
+    <header>
+        <img src="https://picsum.photos/70/70" alt="swedavia">
+        <h1>swedavia</h1>
+        <h2>swedish airports</h2>
+    </header>
+    <form action="/">
+        <label for="username">Username</label>
+        <input id="username" type="text" pattern="^[0-9a-zA-Z]{1,}$" minLength='6' required/>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" minLength='6' required/>
+
+        <input type="submit">
+        <a href="javascript:void(0);" target="_blank">Forgot password?</a>
+    </form>
+    <footer>
+        Powered by <a href="javascript:void(0);" target="_blank">Cygate</a>
+    </footer>
 </body>
 </html>
