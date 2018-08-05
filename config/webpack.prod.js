@@ -29,8 +29,8 @@ module.exports = Merge(common, {
         new HtmlWebpackPlugin({
             template: 'index.html',
             files: {
-                css: 'assets/styles.css',
-                js: 'assets/app.js'
+                css: [ 'styles.css' ],
+                js: [ 'app.js' ]
             }
         })
     ],
