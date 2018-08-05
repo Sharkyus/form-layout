@@ -3,11 +3,13 @@ const common = require('./webpack.base.js');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = Merge(common, {
     mode: 'production',
     output: {
-        filename: 'app.js'
+        filename: 'app.js',
+        publicPath: ''
     },
     optimization: {
         minimizer: [
@@ -23,6 +25,13 @@ module.exports = Merge(common, {
         new MiniCssExtractPlugin({
             filename: "styles.css",
             chunkFilename: "[id].css"
+        }),
+        new HtmlWebpackPlugin({
+            template: 'index.html',
+            files: {
+                css: 'assets/styles.css',
+                js: 'assets/app.js'
+            }
         })
     ],
     module: {

@@ -1,7 +1,7 @@
-let Merge = require('webpack-merge');
-let baseConfig = require('./webpack.base.js');
-let config = require('./dev.json');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
+const Merge = require('webpack-merge');
+const baseConfig = require('./webpack.base.js');
+const config = require('./dev.json');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = Merge(baseConfig, {
     mode: 'development',
@@ -11,5 +11,9 @@ module.exports = Merge(baseConfig, {
         host: config.host
     },
 
-    plugins: [new HtmlWebpackPlugin({template: 'index.html'})]
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'index.html'
+        })
+    ]
 });
