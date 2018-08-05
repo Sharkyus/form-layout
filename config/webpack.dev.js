@@ -8,7 +8,8 @@ module.exports = Merge(baseConfig, {
     devtool: 'source-map',
     devServer: {
         port: config.port,
-        host: config.host
+        host: config.host,
+        open: 'http://localhost:8080'
     },
 
     plugins: [
